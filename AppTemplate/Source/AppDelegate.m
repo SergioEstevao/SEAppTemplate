@@ -7,11 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "UserDefaults.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSBundle * bundle = [NSBundle mainBundle];
+    NSString * currentVersion = [bundle objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    //NSString * comercialVersion = [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSString * gitVersion = [bundle objectForInfoDictionaryKey:@"GitVersion"];
+    [UserDefaults setVersionInfo:[NSString stringWithFormat:@"%@ (%@) ",currentVersion, gitVersion]];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];

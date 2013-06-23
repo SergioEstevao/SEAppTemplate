@@ -46,10 +46,11 @@
 		FF021BB5177761B3009E4180 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF021BA6177761B3009E4180 /* Icon-Small@2x.png */; };
 		FF021BB6177761B3009E4180 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = FF021BA7177761B3009E4180 /* iTunesArtwork.png */; };
 		FF021BB7177761B3009E4180 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF021BA8177761B3009E4180 /* iTunesArtwork@2x.png */; };
-		FF021BBA177761DC009E4180 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF021BB8177761DC009E4180 /* Info.plist */; };
 		FF021BBD177762AA009E4180 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF021BBB177762AA009E4180 /* Icon.png */; };
 		FF021BBE177762AA009E4180 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF021BBC177762AA009E4180 /* Icon@2x.png */; };
 		FF021BC017776546009E4180 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF021BBF17776546009E4180 /* Icon-Small-50@2x.png */; };
+		FF021BCB17778541009E4180 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FF021BCA17778541009E4180 /* Settings.bundle */; };
+		FF021BCE177787DC009E4180 /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FF021BCD177787DC009E4180 /* UserDefaults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,9 @@
 		FF021BBB177762AA009E4180 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		FF021BBC177762AA009E4180 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		FF021BBF17776546009E4180 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		FF021BCA17778541009E4180 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		FF021BCC177787DC009E4180 /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
+		FF021BCD177787DC009E4180 /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,8 @@
 		FF021B90177761A3009E4180 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FF021BCC177787DC009E4180 /* UserDefaults.h */,
+				FF021BCD177787DC009E4180 /* UserDefaults.m */,
 				FF021B91177761A3009E4180 /* AppDelegate.h */,
 				FF021B92177761A3009E4180 /* AppDelegate.m */,
 				FF021B93177761A3009E4180 /* main.m */,
@@ -210,6 +216,7 @@
 		FF021B96177761B3009E4180 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FF021BCA17778541009E4180 /* Settings.bundle */,
 				FF021B97177761B3009E4180 /* Default */,
 				FF021BA1177761B3009E4180 /* Icon */,
 				FF021B9F177761B3009E4180 /* InfoPlist.strings */,
@@ -336,10 +343,10 @@
 				FF021BB5177761B3009E4180 /* Icon-Small@2x.png in Resources */,
 				FF021BB6177761B3009E4180 /* iTunesArtwork.png in Resources */,
 				FF021BB7177761B3009E4180 /* iTunesArtwork@2x.png in Resources */,
-				FF021BBA177761DC009E4180 /* Info.plist in Resources */,
 				FF021BBD177762AA009E4180 /* Icon.png in Resources */,
 				FF021BBE177762AA009E4180 /* Icon@2x.png in Resources */,
 				FF021BC017776546009E4180 /* Icon-Small-50@2x.png in Resources */,
+				FF021BCB17778541009E4180 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +396,7 @@
 			files = (
 				FF021B94177761A3009E4180 /* AppDelegate.m in Sources */,
 				FF021B95177761A3009E4180 /* main.m in Sources */,
+				FF021BCE177787DC009E4180 /* UserDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +612,7 @@
 				FF021BC517778164009E4180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
