@@ -107,6 +107,7 @@
 		FF021BCA17778541009E4180 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		FF021BCC177787DC009E4180 /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
 		FF021BCD177787DC009E4180 /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		FF021BCF17778A1B009E4180 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +137,7 @@
 		FF021B0517775DB2009E4180 = {
 			isa = PBXGroup;
 			children = (
+				FF021BCF17778A1B009E4180 /* README.md */,
 				FF021B1717775DB2009E4180 /* AppTemplate */,
 				FF021B3517775DB2009E4180 /* AppTemplateTests */,
 				FF021B1017775DB2009E4180 /* Frameworks */,
