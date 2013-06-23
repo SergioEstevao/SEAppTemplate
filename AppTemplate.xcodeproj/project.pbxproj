@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		FF021BC317778164009E4180 /* UpgradeVersionNumber */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FF021BC617778164009E4180 /* Build configuration list for PBXAggregateTarget "UpgradeVersionNumber" */;
+			buildPhases = (
+				FF021BC91777818B009E4180 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = UpgradeVersionNumber;
+			productName = UpgradeVersionNumber;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		FF021B1217775DB2009E4180 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF021B1117775DB2009E4180 /* UIKit.framework */; };
 		FF021B1417775DB2009E4180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF021B1317775DB2009E4180 /* Foundation.framework */; };
@@ -45,6 +59,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = FF021B0D17775DB2009E4180;
 			remoteInfo = AppTemplate;
+		};
+		FF021BC717778173009E4180 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF021B0617775DB2009E4180 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF021BC317778164009E4180;
+			remoteInfo = UpgradeVersionNumber;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -241,6 +262,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FF021BC817778173009E4180 /* PBXTargetDependency */,
 			);
 			name = AppTemplate;
 			productName = AppTemplate;
@@ -289,6 +311,7 @@
 			targets = (
 				FF021B0D17775DB2009E4180 /* AppTemplate */,
 				FF021B2D17775DB2009E4180 /* AppTemplateTests */,
+				FF021BC317778164009E4180 /* UpgradeVersionNumber */,
 			);
 		};
 /* End PBXProject section */
@@ -344,6 +367,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		FF021BC91777818B009E4180 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# grabbing version number from plist.\nCOMERCIAL_VERSION=`/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" ${PROJECT}/Info.plist`\n# grabbing number of commit in developer to create a version number\nBUILD_VERSION=`git rev-list HEAD | wc -l | tr -d ' ' | tr -d '\\n'`\n# grabbing commit hash from git\nGIT_VERSION=`git show --abbrev-commit | grep '^commit' | sed 's/commit //' | tr -d '\\n'`\necho \"#define GIT_VERSION $GIT_VERSION\" > ${PROJECT}/InfoPlist.h\necho \"#define BUILD_VERSION $COMERCIAL_VERSION.$BUILD_VERSION\" >> ${PROJECT}/InfoPlist.h\ntouch ${PROJECT}/Info.plist";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -371,6 +407,11 @@
 			isa = PBXTargetDependency;
 			target = FF021B0D17775DB2009E4180 /* AppTemplate */;
 			targetProxy = FF021B3317775DB2009E4180 /* PBXContainerItemProxy */;
+		};
+		FF021BC817778173009E4180 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF021BC317778164009E4180 /* UpgradeVersionNumber */;
+			targetProxy = FF021BC717778173009E4180 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -458,6 +499,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AppTemplate/Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/AppTemplate/Info.plist";
+				INFOPLIST_PREFIX_HEADER = AppTemplate/InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -469,6 +512,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AppTemplate/Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/AppTemplate/Info.plist";
+				INFOPLIST_PREFIX_HEADER = AppTemplate/InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -508,6 +553,20 @@
 			};
 			name = Release;
 		};
+		FF021BC417778164009E4180 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF021BC517778164009E4180 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -537,6 +596,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FF021BC617778164009E4180 /* Build configuration list for PBXAggregateTarget "UpgradeVersionNumber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF021BC417778164009E4180 /* Debug */,
+				FF021BC517778164009E4180 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
